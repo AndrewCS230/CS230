@@ -54,7 +54,7 @@ if(isset($_POST['signup-submit'])){
                 }
             }
         }
-        myslqi_stmt_close($stmt);
+        mysqli_stmt_close($stmt);
         mysqli_close($conn);
 
     }
