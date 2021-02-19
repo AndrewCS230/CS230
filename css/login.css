@@ -1,0 +1,32 @@
+.bg-cover {
+    background-image: url("../images/main-bg-4.jpeg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat; 
+}
+
+.center-me {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.form-signin{
+    background-color: blanchedalmond;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+input{
+    margin-bottom: 10px;
+}
+
+img{
+    max-width: 400px;
+    max-height: 400px;
+    margin: auto;
+
+}
