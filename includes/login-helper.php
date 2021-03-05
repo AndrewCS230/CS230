@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['Login-submit'])){
+if(isset($_POST['login-submit'])){
     require 'dbhandler.php';
 
     $uname = $_POST['uname-email'];
@@ -19,7 +19,7 @@ if(isset($_POST['Login-submit'])){
     }else{
         mysqli_stmt_bind_param($stmt, "ss", $uname, $uname);
         mysqli_stmt_execute($stmt);
-        $result = msqli_stmt_get_result($stmt);
+        $result = mysqli_stmt_get_result($stmt);
         $data = mysqli_fetch_assoc($result);
 
         if(empty($data)){
@@ -33,7 +33,10 @@ if(isset($_POST['Login-submit'])){
                 $_SESSION['fname'] = $data['fname'];
                 $_SESSION['uname'] = $data['uname'];
 
-                echo "<h1>It Worked!</h1><p>$uname</p>";
+                //echo "<h1>It Worked!</h1><p>$uname</p>";
+
+                header("Location:../profile.php");
+                exit();
             }else{
                 header("Location:../login.php?error=WrongPass");
             }
