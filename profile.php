@@ -3,7 +3,7 @@ require 'includes/header.php';
 require 'includes/dbhandler.php';
 ?>
 <main>
-    <link rel="stylesheet" href="css.profile.css">
+    <link rel="stylesheet" href="css/profile.css">
     <script>
     function triggered() {
         document.querySelector("#prof-image").click();
