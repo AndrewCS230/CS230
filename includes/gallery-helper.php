@@ -19,7 +19,7 @@ if(isset($_POST['gallery-submit'])){
     
     $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
-    $allowed = array('jpg', 'jpeg', 'png', 'svg');
+    $allowed = array('jpg', 'jpeg', 'png', 'svg', 'webp');
 
     if($file_error != 0){
         header('location: ../admin.php?error=UploadError');
@@ -41,7 +41,7 @@ if(isset($_POST['gallery-submit'])){
         
         $destination = '../gallery/'.$new_name;
 
-        $sql = "INSERT INTO gallery (title, descript, picpath) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO gallery (title, descript, profpic) VALUES (?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)){
